@@ -1,8 +1,8 @@
 # Solipsism
 
-This is an experience driving game where you drive a car in an infinite procedurally generated world.
+This is an experience driving game inspired by [Yugo](https://petrithxha.itch.io/yugo)
 
-The game will be able to play your songs from inside the car radio to increase the immersion while you drive across many places of the world.
+In this game you will drive a car in an infinite procedurally generated world and also be able to play your songs from inside the car radio to increase the immersion while you drive across many places of the world.
 
 ## Goals
 
