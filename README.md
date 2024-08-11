@@ -75,3 +75,7 @@ If you want to support our work, consider a donation, every amount is important.
 ```
 bc1qg9x5vzr4ppkm2ssw5k7ete4lu49wg7t02azkce
 ```
+
+## Credits
+
+- [Car](https://www.cgtrader.com/free-3d-models/car/car/low-poly-micro-car-80s-fiat-126p)
