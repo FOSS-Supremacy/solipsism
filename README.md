@@ -1,5 +1,7 @@
 # Solipsism
 
+![Screenshot](screenshots/image1.png)
+
 This is an experience driving game inspired by [Yugo](https://petrithxha.itch.io/yugo)
 
 In this game you will drive a car in a low-poly world and also be able to play your songs from inside the car radio to increase the immersion while you drive across many places of the world.
