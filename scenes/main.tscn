@@ -1,0 +1,95 @@
+[gd_scene load_steps=10 format=3 uid="uid://dnxwox43mmj07"]
+
+[ext_resource type="PackedScene" uid="uid://bhnf2ypniaum0" path="res://scenes/car1.tscn" id="1_jy4yw"]
+[ext_resource type="Script" path="res://scripts/camera.gd" id="2_pqkt6"]
+[ext_resource type="AudioStream" uid="uid://dwdaci1ye1q87" path="res://music/HeRobust - Move Mint (VIP).mp3" id="3_bdupi"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mfrc4"]
+sky_top_color = Color(0.20109, 0.0758417, 0.790048, 1)
+sky_horizon_color = Color(0.603964, 0.229694, 1, 1)
+
+[sub_resource type="Sky" id="Sky_37lfr"]
+sky_material = SubResource("ProceduralSkyMaterial_mfrc4")
+
+[sub_resource type="Environment" id="Environment_6wc6q"]
+background_mode = 2
+sky = SubResource("Sky_37lfr")
+ambient_light_source = 3
+reflected_light_source = 2
+tonemap_mode = 2
+glow_enabled = true
+fog_enabled = true
+fog_light_color = Color(0.00431982, 0.000907986, 0.0422762, 1)
+fog_light_energy = 3.02
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nqphy"]
+albedo_color = Color(0.29219, 0.29219, 0.29219, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_csmwe"]
+material = SubResource("StandardMaterial3D_nqphy")
+size = Vector3(2500, 1, 2500)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ovo7a"]
+data = PackedVector3Array(-1250, 0.5, 1250, 1250, 0.5, 1250, -1250, -0.5, 1250, 1250, 0.5, 1250, 1250, -0.5, 1250, -1250, -0.5, 1250, 1250, 0.5, -1250, -1250, 0.5, -1250, 1250, -0.5, -1250, -1250, 0.5, -1250, -1250, -0.5, -1250, 1250, -0.5, -1250, 1250, 0.5, 1250, 1250, 0.5, -1250, 1250, -0.5, 1250, 1250, 0.5, -1250, 1250, -0.5, -1250, 1250, -0.5, 1250, -1250, 0.5, -1250, -1250, 0.5, 1250, -1250, -0.5, -1250, -1250, 0.5, 1250, -1250, -0.5, 1250, -1250, -0.5, -1250, 1250, 0.5, 1250, -1250, 0.5, 1250, 1250, 0.5, -1250, -1250, 0.5, 1250, -1250, 0.5, -1250, 1250, 0.5, -1250, -1250, -0.5, 1250, 1250, -0.5, 1250, -1250, -0.5, -1250, 1250, -0.5, 1250, 1250, -0.5, -1250, -1250, -0.5, -1250)
+
+[node name="game" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_6wc6q")
+
+[node name="world" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_csmwe")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="world"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="world/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_ovo7a")
+
+[node name="car" parent="." instance=ExtResource("1_jy4yw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.575988, 0)
+
+[node name="player" type="CharacterBody3D" parent="car"]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0.352466, 0.897205, -0.0556564)
+script = ExtResource("2_pqkt6")
+
+[node name="head" type="Node3D" parent="car/player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.718632, 0)
+
+[node name="camera" type="Camera3D" parent="car/player/head"]
+transform = Transform3D(-6.64736, -0.0269875, 0.506271, -0.0489016, 6.66031, -0.287044, -0.504626, -0.289926, -6.64122, 0.00139713, 1.04821, -0.43426)
+
+[node name="right-light" type="SpotLight3D" parent="car"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.510644, 0.66487, 1.6175)
+light_energy = 16.0
+shadow_enabled = true
+spot_range = 100.0
+
+[node name="left-light" type="SpotLight3D" parent="car"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.505118, 0.66487, 1.6175)
+light_energy = 16.0
+shadow_enabled = true
+spot_range = 100.0
+
+[node name="back-left-speaker1" type="AudioStreamPlayer3D" parent="car"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.448201, 0.978901, -0.955287)
+stream = ExtResource("3_bdupi")
+volume_db = -20.0
+unit_size = 2.5
+
+[node name="back-right-speaker1" type="AudioStreamPlayer3D" parent="car"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.510358, 0.907754, -0.847175)
+stream = ExtResource("3_bdupi")
+volume_db = -20.0
+unit_size = 2.5
+
+[node name="front-right-speaker1" type="AudioStreamPlayer3D" parent="car"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.509298, 0.90145, 0.660546)
+stream = ExtResource("3_bdupi")
+volume_db = -20.0
+unit_size = 2.5
+
+[node name="front-left-speaker1" type="AudioStreamPlayer3D" parent="car"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4893, 0.912202, 0.700955)
+stream = ExtResource("3_bdupi")
+volume_db = -20.0
+unit_size = 2.5
