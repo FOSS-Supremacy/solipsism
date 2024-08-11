@@ -2,19 +2,23 @@
 
 This is an experience driving game inspired by [Yugo](https://petrithxha.itch.io/yugo)
 
-In this game you will drive a car in an infinite procedurally generated world and also be able to play your songs from inside the car radio to increase the immersion while you drive across many places of the world.
+In this game you will drive a car in a low-poly world and also be able to play your songs from inside the car radio to increase the immersion while you drive across many places of the world.
+
+You will also be able to play with your friends and listen their songs from distance.
 
 ## Goals
 
-- [ ] Add a car
-- [ ] Add camera
-- [ ] Implement a procedural world with roads
+- [x] Add a car
+- [x] Add first person camera
+- [x] Add car lights
+- [x] Add 3D sound on car speakers
+- [ ] Add a low-poly world with roads
 - [ ] Add day and night cycle
 - [ ] Add weather
-- [ ] Add songs
-- [ ] Improve the patterns of the procedural generation
 - [ ] Add music playback from the user files
 - [ ] Add a way to play YouTube, Deezer and Spotify music
+- [ ] Add LAN multiplayer
+- [ ] Add dedicated server multiplayer
 
 ## Chat
 
