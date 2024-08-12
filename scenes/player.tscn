@@ -1,12 +1,14 @@
-[gd_scene load_steps=28 format=3 uid="uid://bhnf2ypniaum0"]
+[gd_scene load_steps=31 format=3 uid="uid://bhnf2ypniaum0"]
 
-[ext_resource type="Texture2D" uid="uid://68wfpqbugcdf" path="res://cars/car1_001_COLOR_BASIC.png" id="1_2up1b"]
-[ext_resource type="Script" path="res://scripts/player.gd" id="1_ul5sa"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_srwvd"]
+[ext_resource type="Texture2D" uid="uid://68wfpqbugcdf" path="res://cars/car1_001_COLOR_BASIC.png" id="2_airkg"]
+[ext_resource type="AudioStream" uid="uid://dwdaci1ye1q87" path="res://music/HeRobust - Move Mint (VIP).mp3" id="3_e4det"]
+[ext_resource type="Script" path="res://scripts/camera.gd" id="4_4mmg7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aq812"]
 resource_name = "BASIC COLOR"
 cull_mode = 2
-albedo_texture = ExtResource("1_2up1b")
+albedo_texture = ExtResource("2_airkg")
 metallic = 0.5
 roughness = 0.5
 
@@ -83,7 +85,7 @@ shadow_mesh = SubResource("ArrayMesh_nrxu8")
 resource_name = "WINDOW"
 transparency = 4
 cull_mode = 2
-albedo_texture = ExtResource("1_2up1b")
+albedo_texture = ExtResource("2_airkg")
 roughness = 0.0
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_vlu2n"]
@@ -382,9 +384,20 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_k7wwk")
 
-[node name="car1" type="VehicleBody3D"]
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_u2rii"]
+properties/0/path = NodePath(".:engine_force")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:brake")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath(".:steering")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+
+[node name="car" type="VehicleBody3D"]
 gravity_scale = 4.0
-script = ExtResource("1_ul5sa")
+script = ExtResource("1_srwvd")
 
 [node name="body" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.00047, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -477,3 +490,56 @@ transform = Transform3D(1.00047, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.11079, -0.416)
 visible = false
 mesh = SubResource("ArrayMesh_gwla8")
 skeleton = NodePath("")
+
+[node name="right-light" type="SpotLight3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.510644, 0.66487, 1.6175)
+light_energy = 16.0
+shadow_enabled = true
+spot_range = 100.0
+
+[node name="left-light" type="SpotLight3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.505118, 0.66487, 1.6175)
+light_energy = 16.0
+shadow_enabled = true
+spot_range = 100.0
+
+[node name="internal-light" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.915422, 0)
+shadow_enabled = true
+
+[node name="back-left-speaker1" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.448201, 0.978901, -0.955287)
+stream = ExtResource("3_e4det")
+volume_db = -20.0
+unit_size = 2.5
+
+[node name="back-right-speaker1" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.510358, 0.907754, -0.847175)
+stream = ExtResource("3_e4det")
+volume_db = -20.0
+unit_size = 2.5
+
+[node name="front-right-speaker1" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.509298, 0.90145, 0.660546)
+stream = ExtResource("3_e4det")
+volume_db = -20.0
+unit_size = 2.5
+
+[node name="front-left-speaker1" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4893, 0.912202, 0.700955)
+stream = ExtResource("3_e4det")
+volume_db = -20.0
+unit_size = 2.5
+
+[node name="player" type="CharacterBody3D" parent="."]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0.352466, 0.897205, -0.0556564)
+script = ExtResource("4_4mmg7")
+
+[node name="head" type="Node3D" parent="player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.718632, 0)
+
+[node name="camera" type="Camera3D" parent="player/head"]
+transform = Transform3D(-6.64736, -0.0269875, 0.506271, -0.0489016, 6.66031, -0.287044, -0.504626, -0.289926, -6.64122, 0.00139713, 1.04821, -0.43426)
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_u2rii")

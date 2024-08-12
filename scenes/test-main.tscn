@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://bq27vgsveklx6"]
+
+[ext_resource type="PackedScene" uid="uid://7kpoyini1lat" path="res://scenes/single-player.tscn" id="1_51xjc"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_y1qc1"]
+sky_top_color = Color(0, 0, 0, 1)
+sky_horizon_color = Color(0, 0, 0, 1)
+ground_bottom_color = Color(0, 0, 0, 1)
+ground_horizon_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Sky" id="Sky_37lfr"]
+sky_material = SubResource("ProceduralSkyMaterial_y1qc1")
+
+[sub_resource type="Environment" id="Environment_jql02"]
+background_mode = 1
+sky = SubResource("Sky_37lfr")
+ambient_light_source = 3
+reflected_light_source = 2
+tonemap_mode = 2
+glow_enabled = true
+fog_enabled = true
+fog_light_color = Color(0.00392157, 0, 0, 1)
+fog_light_energy = 3.02
+
+[node name="game" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_jql02")
+
+[node name="single-player" parent="." instance=ExtResource("1_51xjc")]
