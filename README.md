@@ -19,7 +19,7 @@ You will also be able to play with your friends and listen their songs from dist
 - [ ] Add weather
 - [ ] Add music playback from the user files
 - [ ] Add a way to play YouTube, Deezer and Spotify music
-- [ ] Add LAN multiplayer
+- [x] Add LAN multiplayer
 - [ ] Add dedicated server multiplayer
 
 ## Chat
