@@ -1,11 +1,11 @@
-[gd_scene load_steps=33 format=3 uid="uid://bhnf2ypniaum0"]
+[gd_scene load_steps=35 format=3 uid="uid://bhnf2ypniaum0"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_srwvd"]
 [ext_resource type="Texture2D" uid="uid://68wfpqbugcdf" path="res://cars/car1_001_COLOR_BASIC.png" id="2_airkg"]
 [ext_resource type="Script" path="res://scripts/lights.gd" id="3_32e0k"]
-[ext_resource type="AudioStream" uid="uid://dwdaci1ye1q87" path="res://music/HeRobust - Move Mint (VIP).mp3" id="3_e4det"]
 [ext_resource type="Script" path="res://scripts/camera.gd" id="4_4mmg7"]
 [ext_resource type="Script" path="res://scripts/music.gd" id="5_uun7x"]
+[ext_resource type="Script" path="res://scripts/microphone.gd" id="7_mdjrk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aq812"]
 resource_name = "BASIC COLOR"
@@ -397,6 +397,10 @@ properties/2/path = NodePath(".:steering")
 properties/2/spawn = true
 properties/2/replication_mode = 1
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_6w5sl"]
+
+[sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_ngjk1"]
+
 [node name="car" type="VehicleBody3D"]
 gravity_scale = 4.0
 script = ExtResource("1_srwvd")
@@ -530,20 +534,26 @@ script = ExtResource("5_uun7x")
 
 [node name="back_left_speaker" type="AudioStreamPlayer3D" parent="speakers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.448201, 0.978901, -0.955287)
-stream = ExtResource("3_e4det")
+stream = SubResource("AudioStreamRandomizer_6w5sl")
 unit_size = 0.3
 
 [node name="back_right_speaker" type="AudioStreamPlayer3D" parent="speakers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.510358, 0.907754, -0.847175)
-stream = ExtResource("3_e4det")
+stream = SubResource("AudioStreamRandomizer_6w5sl")
 unit_size = 0.3
 
 [node name="front_right_speaker" type="AudioStreamPlayer3D" parent="speakers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.509298, 0.90145, 0.660546)
-stream = ExtResource("3_e4det")
+stream = SubResource("AudioStreamRandomizer_6w5sl")
 unit_size = 0.3
 
 [node name="front_left_speaker" type="AudioStreamPlayer3D" parent="speakers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4893, 0.912202, 0.700955)
-stream = ExtResource("3_e4det")
+stream = SubResource("AudioStreamRandomizer_6w5sl")
 unit_size = 0.3
+
+[node name="microphone" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.335512, 1.10764, -0.0823613)
+stream = SubResource("AudioStreamMicrophone_ngjk1")
+unit_size = 0.3
+script = ExtResource("7_mdjrk")
