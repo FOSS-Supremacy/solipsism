@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bq27vgsveklx6"]
 
-[ext_resource type="PackedScene" uid="uid://7kpoyini1lat" path="res://scenes/single-player.tscn" id="1_51xjc"]
+[ext_resource type="PackedScene" uid="uid://7kpoyini1lat" path="res://scenes/single_player.tscn" id="1_yquai"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_y1qc1"]
 sky_top_color = Color(0, 0, 0, 1)
@@ -27,4 +27,4 @@ fog_light_energy = 3.02
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_jql02")
 
-[node name="single-player" parent="." instance=ExtResource("1_51xjc")]
+[node name="single_player" parent="." instance=ExtResource("1_yquai")]

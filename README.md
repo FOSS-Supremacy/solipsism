@@ -1,6 +1,8 @@
 # Solipsism
 
 ![Screenshot](screenshots/image1.png)
+![Screenshot](screenshots/image2.png)
+![Screenshot](screenshots/image3.png)
 
 This is an experience driving game inspired by [Yugo](https://petrithxha.itch.io/yugo)
 

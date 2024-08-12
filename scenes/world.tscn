@@ -1,8 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dnxwox43mmj07"]
-
-[ext_resource type="Texture2D" uid="uid://bsg8lmesq81f2" path="res://icons/previous-song.svg" id="1_mnln6"]
-[ext_resource type="Texture2D" uid="uid://b6hu7uhhrpyxo" path="res://icons/play.svg" id="1_oi6g5"]
-[ext_resource type="Texture2D" uid="uid://bxggcj1tuvab0" path="res://icons/next-song.svg" id="3_ap1vr"]
+[gd_scene load_steps=7 format=3 uid="uid://dnxwox43mmj07"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_y1qc1"]
 sky_top_color = Color(0.20109, 0.0758417, 0.790048, 1)
@@ -32,7 +28,7 @@ size = Vector3(2500, 1, 2500)
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_vpe8k"]
 data = PackedVector3Array(-1250, 0.5, 1250, 1250, 0.5, 1250, -1250, -0.5, 1250, 1250, 0.5, 1250, 1250, -0.5, 1250, -1250, -0.5, 1250, 1250, 0.5, -1250, -1250, 0.5, -1250, 1250, -0.5, -1250, -1250, 0.5, -1250, -1250, -0.5, -1250, 1250, -0.5, -1250, 1250, 0.5, 1250, 1250, 0.5, -1250, 1250, -0.5, 1250, 1250, 0.5, -1250, 1250, -0.5, -1250, 1250, -0.5, 1250, -1250, 0.5, -1250, -1250, 0.5, 1250, -1250, -0.5, -1250, -1250, 0.5, 1250, -1250, -0.5, 1250, -1250, -0.5, -1250, 1250, 0.5, 1250, -1250, 0.5, 1250, 1250, 0.5, -1250, -1250, 0.5, 1250, -1250, 0.5, -1250, 1250, 0.5, -1250, -1250, -0.5, 1250, 1250, -0.5, 1250, -1250, -0.5, -1250, 1250, -0.5, 1250, 1250, -0.5, -1250, -1250, -0.5, -1250)
 
-[node name="game" type="Node3D"]
+[node name="main" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_jql02")
@@ -44,36 +40,3 @@ mesh = SubResource("BoxMesh_h7hk2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="world/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_vpe8k")
-
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = 827.0
-offset_top = 513.0
-offset_right = 1119.0
-offset_bottom = 630.0
-
-[node name="previous-song" type="TextureButton" parent="."]
-offset_left = 860.0
-offset_top = 585.0
-offset_right = 948.0
-offset_bottom = 626.0
-texture_normal = ExtResource("1_mnln6")
-
-[node name="play-pause" type="TextureButton" parent="."]
-offset_left = 963.0
-offset_top = 586.0
-offset_right = 1037.0
-offset_bottom = 623.0
-texture_normal = ExtResource("1_oi6g5")
-
-[node name="next-song" type="TextureButton" parent="."]
-offset_left = 1054.0
-offset_top = 586.0
-offset_right = 1141.0
-offset_bottom = 624.0
-texture_normal = ExtResource("3_ap1vr")
-
-[node name="song-duration" type="HSlider" parent="."]
-offset_left = 853.0
-offset_top = 525.0
-offset_right = 1080.0
-offset_bottom = 576.0
