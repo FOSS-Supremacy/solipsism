@@ -13,3 +13,14 @@ func _physics_process(_delta):
 	if Input.is_action_just_pressed("increase_music_volume"):
 		for speaker in speakers:
 			speaker.unit_size = speaker.unit_size + 0.2
+
+#func load_audio_files():
+	#var dir = DirAccess.open("res://music")
+	#if dir:
+		#dir.list_dir_begin()
+	#var file_name = dir.get_next()
+	#while file_name != "":
+		#if ".mp3" in file_name:
+			#for speaker in speakers:
+				#speaker.stream = load(file_name)
+				#file_name = dir.get_next()
