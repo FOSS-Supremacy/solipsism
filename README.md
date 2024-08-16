@@ -10,6 +10,13 @@ In this game you will drive a car in a low-poly world and also be able to play y
 
 You will also be able to play with your friends and listen their songs from distance.
 
+## Controls
+
+- Arrow Keys/WASD - Move the player
+- Z - Control the external car lights
+- X - Control the internal car lights
+- Space - Play/Pause music
+
 ## Goals
 
 - [x] Add a car

@@ -515,14 +515,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.915422, 0)
 shadow_enabled = true
 
 [node name="player" type="CharacterBody3D" parent="."]
-transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0.352466, 0.897205, -0.0556564)
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, -0.010249, 0.897205, -0.0556564)
 script = ExtResource("4_4mmg7")
 
-[node name="head" type="Node3D" parent="player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.718632, 0)
+[node name="cam_origin" type="Node3D" parent="player"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
 
-[node name="camera" type="Camera3D" parent="player/head"]
-transform = Transform3D(-6.64736, -0.0269875, 0.506271, -0.0489016, 6.66031, -0.287044, -0.504626, -0.289926, -6.64122, 0.00139713, 1.04821, -0.43426)
+[node name="SpringArm3D" type="SpringArm3D" parent="player/cam_origin"]
+spring_length = 30.0
+margin = 0.5
+
+[node name="camera1" type="Camera3D" parent="player/cam_origin/SpringArm3D"]
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
 replication_config = SubResource("SceneReplicationConfig_u2rii")
