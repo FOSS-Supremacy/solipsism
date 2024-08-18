@@ -1,8 +1,7 @@
-[gd_scene load_steps=34 format=4 uid="uid://bhnf2ypniaum0"]
+[gd_scene load_steps=33 format=4 uid="uid://bhnf2ypniaum0"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_srwvd"]
 [ext_resource type="Texture2D" uid="uid://68wfpqbugcdf" path="res://cars/car1_001_COLOR_BASIC.png" id="2_airkg"]
-[ext_resource type="Script" path="res://scripts/lights.gd" id="3_32e0k"]
 [ext_resource type="Script" path="res://scripts/camera.gd" id="4_4mmg7"]
 [ext_resource type="Script" path="res://scripts/3d_sound.gd" id="5_hrqs3"]
 [ext_resource type="Script" path="res://scripts/microphone.gd" id="7_mdjrk"]
@@ -218,6 +217,38 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_y8gul")
 
+[sub_resource type="ArrayMesh" id="ArrayMesh_k7wwk"]
+_surfaces = [{
+"aabb": AABB(-0.629423, -0.23125, -0.716283, 1.25885, 0.426362, 1.88278),
+"format": 34359742465,
+"index_count": 24,
+"index_data": PackedByteArray("AAAJAAEAAAAIAAkAAwAEAAUAAwACAAQACwAMAAoACwANAAwABgAPAAcABgAOAA8A"),
+"name": "WINDOW",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("Q4zpPiAHQz4fSOK+JzQAP4Aru71QXje/x3YgP0ADVr50zJc9yHYgP0ADVr6Ozi2/qkEGP2DLNT6YzJc9q0EGP2DLNT41gqS+1yEhP+zMbL7tT5U/KuAEP0jLRz4M/1c/Q4zpviAHQz4fSOK+JzQAv4Aru71QXje/x3Ygv0ADVr50zJc9yHYgv0ADVr6Ozi2/qkEGv2DLNT6YzJc9q0EGv2DLNT41gqS+1yEhv+zMbL7tT5U/KuAEv0jLRz4M/1c/")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_gwla8"]
+resource_name = "car1_Cube_121"
+_surfaces = [{
+"aabb": AABB(-0.629423, -0.23125, -0.716283, 1.25885, 0.426362, 1.88278),
+"attribute_data": PackedByteArray("7P1hPqCMPT3s/WE+oIw9Pfq5WD4QZzE9+rlYPhBnMT36uVg+EGcxPfq5WD4QZzE9tkNdPoA4Oz22Q10+gDg7Pez9YT6gjD097P1hPqCMPT36uVg+EGcxPfq5WD4QZzE9+rlYPhBnMT36uVg+EGcxPbZDXT6AODs9tkNdPoA4Oz0="),
+"format": 34359742487,
+"index_count": 24,
+"index_data": PackedByteArray("AAAJAAEAAAAIAAkAAwAEAAUAAwACAAQACwAMAAoACwANAAwABgAPAAcABgAOAA8A"),
+"material": SubResource("StandardMaterial3D_kd5ea"),
+"name": "WINDOW",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("Q4zpPiAHQz4fSOK+JzQAP4Aru71QXje/x3YgP0ADVr50zJc9yHYgP0ADVr6Ozi2/qkEGP2DLNT6YzJc9q0EGP2DLNT41gqS+1yEhP+zMbL7tT5U/KuAEP0jLRz4M/1c/Q4zpviAHQz4fSOK+JzQAv4Aru71QXje/x3Ygv0ADVr50zJc9yHYgv0ADVr6Ozi2/qkEGv2DLNT6YzJc9q0EGv2DLNT41gqS+1yEhv+zMbL7tT5U/KuAEv0jLRz4M/1c/3MD//////7/cwP//////vzHlzJr///8/MeXMmv///z8x5cya////PzHlzJr///8//38lt////z//fyW3////P9zA//////+/3MD//////7/NGsya////P80azJr///8/zRrMmv///z/NGsya////P/9/Jbf///8//38lt////z8=")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_k7wwk")
+
 [sub_resource type="ArrayMesh" id="ArrayMesh_wsgkl"]
 _surfaces = [{
 "aabb": AABB(-0.00148278, -0.267423, -0.267423, 0.20532, 0.534847, 0.534847),
@@ -354,38 +385,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_xnix1")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_k7wwk"]
-_surfaces = [{
-"aabb": AABB(-0.629423, -0.23125, -0.716283, 1.25885, 0.426362, 1.88278),
-"format": 34359742465,
-"index_count": 24,
-"index_data": PackedByteArray("AAAJAAEAAAAIAAkAAwAEAAUAAwACAAQACwAMAAoACwANAAwABgAPAAcABgAOAA8A"),
-"name": "WINDOW",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 16,
-"vertex_data": PackedByteArray("Q4zpPiAHQz4fSOK+JzQAP4Aru71QXje/x3YgP0ADVr50zJc9yHYgP0ADVr6Ozi2/qkEGP2DLNT6YzJc9q0EGP2DLNT41gqS+1yEhP+zMbL7tT5U/KuAEP0jLRz4M/1c/Q4zpviAHQz4fSOK+JzQAv4Aru71QXje/x3Ygv0ADVr50zJc9yHYgv0ADVr6Ozi2/qkEGv2DLNT6YzJc9q0EGv2DLNT41gqS+1yEhv+zMbL7tT5U/KuAEv0jLRz4M/1c/")
-}]
-blend_shape_mode = 0
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_gwla8"]
-resource_name = "car1_Cube_121"
-_surfaces = [{
-"aabb": AABB(-0.629423, -0.23125, -0.716283, 1.25885, 0.426362, 1.88278),
-"attribute_data": PackedByteArray("7P1hPqCMPT3s/WE+oIw9Pfq5WD4QZzE9+rlYPhBnMT36uVg+EGcxPfq5WD4QZzE9tkNdPoA4Oz22Q10+gDg7Pez9YT6gjD097P1hPqCMPT36uVg+EGcxPfq5WD4QZzE9+rlYPhBnMT36uVg+EGcxPbZDXT6AODs9tkNdPoA4Oz0="),
-"format": 34359742487,
-"index_count": 24,
-"index_data": PackedByteArray("AAAJAAEAAAAIAAkAAwAEAAUAAwACAAQACwAMAAoACwANAAwABgAPAAcABgAOAA8A"),
-"material": SubResource("StandardMaterial3D_kd5ea"),
-"name": "WINDOW",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 16,
-"vertex_data": PackedByteArray("Q4zpPiAHQz4fSOK+JzQAP4Aru71QXje/x3YgP0ADVr50zJc9yHYgP0ADVr6Ozi2/qkEGP2DLNT6YzJc9q0EGP2DLNT41gqS+1yEhP+zMbL7tT5U/KuAEP0jLRz4M/1c/Q4zpviAHQz4fSOK+JzQAv4Aru71QXje/x3Ygv0ADVr50zJc9yHYgv0ADVr6Ozi2/qkEGv2DLNT6YzJc9q0EGv2DLNT41gqS+1yEhv+zMbL7tT5U/KuAEv0jLRz4M/1c/3MD//////7/cwP//////vzHlzJr///8/MeXMmv///z8x5cya////PzHlzJr///8//38lt////z//fyW3////P9zA//////+/3MD//////7/NGsya////P80azJr///8/zRrMmv///z/NGsya////P/9/Jbf///8//38lt////z8=")
-}]
-blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_k7wwk")
-
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_u2rii"]
 properties/0/path = NodePath(".:engine_force")
 properties/0/spawn = true
@@ -400,6 +399,7 @@ properties/2/replication_mode = 1
 [sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_ngjk1"]
 
 [node name="car" type="VehicleBody3D"]
+mass = 50.0
 gravity_scale = 4.0
 script = ExtResource("1_srwvd")
 
@@ -437,6 +437,12 @@ skeleton = NodePath("")
 [node name="interior" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.979133, 0, 0, 0, 0.979133, 0, 0, 0, 0.979133, -0.0380644, 0.718583, 0.560221)
 mesh = SubResource("ArrayMesh_bmyof")
+skeleton = NodePath("")
+
+[node name="windows" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.00047, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.11079, -0.416)
+visible = false
+mesh = SubResource("ArrayMesh_gwla8")
 skeleton = NodePath("")
 
 [node name="front_left_wheel" type="VehicleWheel3D" parent="."]
@@ -489,14 +495,7 @@ suspension_stiffness = 80.0
 mesh = SubResource("ArrayMesh_5xu5a")
 skeleton = NodePath("")
 
-[node name="windows" type="MeshInstance3D" parent="."]
-transform = Transform3D(1.00047, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.11079, -0.416)
-visible = false
-mesh = SubResource("ArrayMesh_gwla8")
-skeleton = NodePath("")
-
 [node name="lights" type="Node3D" parent="."]
-script = ExtResource("3_32e0k")
 
 [node name="right_light" type="SpotLight3D" parent="lights"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.510644, 0.66487, 1.6175)

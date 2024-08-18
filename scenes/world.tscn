@@ -1,22 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://dnxwox43mmj07"]
+[gd_scene load_steps=5 format=3 uid="uid://dnxwox43mmj07"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_y1qc1"]
-sky_top_color = Color(0, 0, 0, 1)
-sky_horizon_color = Color(0, 0, 0, 1)
-
-[sub_resource type="Sky" id="Sky_37lfr"]
-sky_material = SubResource("ProceduralSkyMaterial_y1qc1")
-
-[sub_resource type="Environment" id="Environment_jql02"]
-background_mode = 2
-sky = SubResource("Sky_37lfr")
-ambient_light_source = 3
-reflected_light_source = 2
-tonemap_mode = 2
-glow_enabled = true
-fog_enabled = true
-fog_light_color = Color(0.00392157, 0, 0, 1)
-fog_light_energy = 3.02
+[ext_resource type="Script" path="res://scripts/world.gd" id="1_jx7vr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nqphy"]
 albedo_color = Color(0.29219, 0.29219, 0.29219, 1)
@@ -28,10 +12,19 @@ size = Vector3(2500, 1, 2500)
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_vpe8k"]
 data = PackedVector3Array(-1250, 0.5, 1250, 1250, 0.5, 1250, -1250, -0.5, 1250, 1250, 0.5, 1250, 1250, -0.5, 1250, -1250, -0.5, 1250, 1250, 0.5, -1250, -1250, 0.5, -1250, 1250, -0.5, -1250, -1250, 0.5, -1250, -1250, -0.5, -1250, 1250, -0.5, -1250, 1250, 0.5, 1250, 1250, 0.5, -1250, 1250, -0.5, 1250, 1250, 0.5, -1250, 1250, -0.5, -1250, 1250, -0.5, 1250, -1250, 0.5, -1250, -1250, 0.5, 1250, -1250, -0.5, -1250, -1250, 0.5, 1250, -1250, -0.5, 1250, -1250, -0.5, -1250, 1250, 0.5, 1250, -1250, 0.5, 1250, 1250, 0.5, -1250, -1250, 0.5, 1250, -1250, 0.5, -1250, 1250, 0.5, -1250, -1250, -0.5, 1250, 1250, -0.5, 1250, -1250, -0.5, -1250, 1250, -0.5, 1250, 1250, -0.5, -1250, -1250, -0.5, -1250)
 
-[node name="main" type="Node3D"]
+[node name="world" type="Node3D"]
+script = ExtResource("1_jx7vr")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_jql02")
+
+[node name="sun" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.224951, 0.97437, 0, -0.97437, -0.224951, 0, 4.63072, 0)
+shadow_enabled = true
+
+[node name="moon" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.224951, 0.97437, 0, -0.97437, -0.224951, 0, 4.63072, 0)
+light_color = Color(3.36915e-07, 0.219209, 0.219209, 1)
+shadow_enabled = true
 
 [node name="world" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_h7hk2")
